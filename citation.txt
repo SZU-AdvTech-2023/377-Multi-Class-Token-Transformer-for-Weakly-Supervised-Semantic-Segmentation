@@ -1,0 +1,7 @@
+@article{REPO377,
+    author = "Xu, Lian and Ouyang, Wanli and Bennamoun and Boussaid, Farid and Xu, Dan",
+    journal = "2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+    pages = "4300-4309",
+    title = "{Multi-class Token Transformer for Weakly Supervised Semantic Segmentation}",
+    year = "2022"
+}
