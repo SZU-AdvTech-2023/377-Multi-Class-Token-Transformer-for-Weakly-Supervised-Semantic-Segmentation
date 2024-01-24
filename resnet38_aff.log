@@ -1,0 +1,264 @@
+{'batch_size': 8, 'max_epoches': 5, 'network': 'network.resnet38_aff', 'lr': 0.01, 'num_workers': 8, 'wt_dec': 0.0005, 'train_list': 'psa/voc12/train_aug.txt', 'val_list': 'psa/voc12/val.txt', 'session_name': 'resnet38_aff', 'crop_size': 448, 'weights': 'weights/res38_cls.pth', 'voc12_root': 'Datasets/VOC2012', 'la_crf_dir': 'MCTformer_results/voc/MCTformer_v2/attn-patchrefine-npy-crf_1', 'ha_crf_dir': 'MCTformer_results/voc/MCTformer_v2/attn-patchrefine-npy-crf_12'}
+Net(
+  (conv1a): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  (b2): ResBlock(
+    (bn_branch2a): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (conv_branch1): Conv2d(64, 128, kernel_size=(1, 1), stride=(2, 2), bias=False)
+  )
+  (b2_1): ResBlock(
+    (bn_branch2a): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  )
+  (b2_2): ResBlock(
+    (bn_branch2a): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  )
+  (b3): ResBlock(
+    (bn_branch2a): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (conv_branch1): Conv2d(128, 256, kernel_size=(1, 1), stride=(2, 2), bias=False)
+  )
+  (b3_1): ResBlock(
+    (bn_branch2a): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  )
+  (b3_2): ResBlock(
+    (bn_branch2a): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  )
+  (b4): ResBlock(
+    (bn_branch2a): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (conv_branch1): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+  )
+  (b4_1): ResBlock(
+    (bn_branch2a): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  )
+  (b4_2): ResBlock(
+    (bn_branch2a): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  )
+  (b4_3): ResBlock(
+    (bn_branch2a): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  )
+  (b4_4): ResBlock(
+    (bn_branch2a): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  )
+  (b4_5): ResBlock(
+    (bn_branch2a): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  )
+  (b5): ResBlock(
+    (bn_branch2a): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(512, 1024, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), bias=False)
+    (conv_branch1): Conv2d(512, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+  )
+  (b5_1): ResBlock(
+    (bn_branch2a): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(1024, 512, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), bias=False)
+    (bn_branch2b1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(512, 1024, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), bias=False)
+  )
+  (b5_2): ResBlock(
+    (bn_branch2a): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(1024, 512, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), bias=False)
+    (bn_branch2b1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2b1): Conv2d(512, 1024, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2), bias=False)
+  )
+  (b6): ResBlock_bot(
+    (bn_branch2a): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(1024, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (dropout_2b1): Dropout2d(p=0.3, inplace=False)
+    (conv_branch2b1): Conv2d(512, 1024, kernel_size=(3, 3), stride=(1, 1), padding=(4, 4), dilation=(4, 4), bias=False)
+    (bn_branch2b2): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (dropout_2b2): Dropout2d(p=0.3, inplace=False)
+    (conv_branch2b2): Conv2d(1024, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+    (conv_branch1): Conv2d(1024, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+  )
+  (b7): ResBlock_bot(
+    (bn_branch2a): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv_branch2a): Conv2d(2048, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+    (bn_branch2b1): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (dropout_2b1): Dropout2d(p=0.5, inplace=False)
+    (conv_branch2b1): Conv2d(1024, 2048, kernel_size=(3, 3), stride=(1, 1), padding=(4, 4), dilation=(4, 4), bias=False)
+    (bn_branch2b2): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (dropout_2b2): Dropout2d(p=0.5, inplace=False)
+    (conv_branch2b2): Conv2d(2048, 4096, kernel_size=(1, 1), stride=(1, 1), bias=False)
+    (conv_branch1): Conv2d(2048, 4096, kernel_size=(1, 1), stride=(1, 1), bias=False)
+  )
+  (bn7): BatchNorm2d(4096, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (f8_3): Conv2d(512, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+  (f8_4): Conv2d(1024, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+  (f8_5): Conv2d(4096, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+  (f9): Conv2d(448, 448, kernel_size=(1, 1), stride=(1, 1), bias=False)
+)
+Session started:  Sat Dec  2 00:17:00 2023
+Iter:    0/ 6610 loss:0.7109 0.5470 1.4237 0.4365 cnt:134014 42285 2329 imps:0.4 Fin:Sun Dec  3 12:55:21 2023 lr: 0.0100
+Iter:   50/ 6610 loss:0.5838 0.4739 0.8359 0.5126 cnt:141145 49816 3652 imps:15.0 Fin:Sat Dec  2 01:15:34 2023 lr: 0.0099
+Iter:  100/ 6610 loss:0.5401 0.3927 0.7849 0.4913 cnt:138120 47236 2992 imps:23.6 Fin:Sat Dec  2 00:54:22 2023 lr: 0.0099
+Iter:  150/ 6610 loss:0.5196 0.3695 0.7510 0.4790 cnt:138612 39586 2904 imps:29.0 Fin:Sat Dec  2 00:47:24 2023 lr: 0.0098
+Iter:  200/ 6610 loss:0.4832 0.3282 0.7343 0.4351 cnt:156772 38222 2833 imps:32.6 Fin:Sat Dec  2 00:44:02 2023 lr: 0.0097
+Iter:  250/ 6610 loss:0.4925 0.3389 0.6859 0.4725 cnt:134300 43982 3430 imps:35.4 Fin:Sat Dec  2 00:41:52 2023 lr: 0.0097
+Iter:  300/ 6610 loss:0.4369 0.3200 0.6657 0.3810 cnt:160165 40196 3290 imps:37.7 Fin:Sat Dec  2 00:40:23 2023 lr: 0.0096
+Iter:  350/ 6610 loss:0.4281 0.3185 0.5971 0.3984 cnt:152920 49299 3591 imps:39.6 Fin:Sat Dec  2 00:39:17 2023 lr: 0.0095
+Iter:  400/ 6610 loss:0.4099 0.3262 0.5918 0.3609 cnt:136124 49478 2895 imps:41.2 Fin:Sat Dec  2 00:38:25 2023 lr: 0.0095
+Iter:  450/ 6610 loss:0.3700 0.2974 0.5512 0.3157 cnt:142009 45955 2937 imps:42.5 Fin:Sat Dec  2 00:37:45 2023 lr: 0.0094
+Iter:  500/ 6610 loss:0.3936 0.3110 0.5582 0.3525 cnt:137379 45842 3945 imps:43.5 Fin:Sat Dec  2 00:37:16 2023 lr: 0.0093
+Iter:  550/ 6610 loss:0.4005 0.3367 0.5251 0.3701 cnt:145239 45577 3794 imps:44.5 Fin:Sat Dec  2 00:36:49 2023 lr: 0.0092
+Iter:  600/ 6610 loss:0.3827 0.3139 0.5250 0.3459 cnt:150717 50583 3972 imps:45.3 Fin:Sat Dec  2 00:36:28 2023 lr: 0.0092
+Iter:  650/ 6610 loss:0.3552 0.2876 0.5044 0.3145 cnt:141576 42943 2980 imps:46.0 Fin:Sat Dec  2 00:36:11 2023 lr: 0.0091
+Iter:  700/ 6610 loss:0.4136 0.3125 0.5336 0.4042 cnt:132282 49499 2850 imps:46.6 Fin:Sat Dec  2 00:35:55 2023 lr: 0.0090
+Iter:  750/ 6610 loss:0.3440 0.2642 0.5095 0.3012 cnt:146582 50632 4075 imps:47.2 Fin:Sat Dec  2 00:35:41 2023 lr: 0.0090
+Iter:  800/ 6610 loss:0.3587 0.2581 0.5056 0.3355 cnt:137968 45722 3525 imps:47.7 Fin:Sat Dec  2 00:35:28 2023 lr: 0.0089
+Iter:  850/ 6610 loss:0.3341 0.2541 0.4798 0.3013 cnt:137779 46407 3718 imps:48.1 Fin:Sat Dec  2 00:35:18 2023 lr: 0.0088
+Iter:  900/ 6610 loss:0.3745 0.2956 0.4982 0.3520 cnt:135017 52508 3178 imps:48.5 Fin:Sat Dec  2 00:35:10 2023 lr: 0.0088
+Iter:  950/ 6610 loss:0.3186 0.2558 0.4869 0.2658 cnt:127827 46809 3285 imps:48.9 Fin:Sat Dec  2 00:35:02 2023 lr: 0.0087
+Iter: 1000/ 6610 loss:0.3356 0.2484 0.4635 0.3153 cnt:137171 43472 3284 imps:49.2 Fin:Sat Dec  2 00:34:55 2023 lr: 0.0086
+Iter: 1050/ 6610 loss:0.3139 0.2468 0.4381 0.2853 cnt:143490 47985 3201 imps:49.5 Fin:Sat Dec  2 00:34:49 2023 lr: 0.0086
+Iter: 1100/ 6610 loss:0.3772 0.2947 0.4998 0.3570 cnt:131759 48054 2911 imps:49.7 Fin:Sat Dec  2 00:34:43 2023 lr: 0.0085
+Iter: 1150/ 6610 loss:0.3513 0.2602 0.4696 0.3376 cnt:134829 49125 2931 imps:50.0 Fin:Sat Dec  2 00:34:38 2023 lr: 0.0084
+Iter: 1200/ 6610 loss:0.3265 0.2719 0.4601 0.2869 cnt:132535 53752 3569 imps:50.2 Fin:Sat Dec  2 00:34:34 2023 lr: 0.0084
+Iter: 1250/ 6610 loss:0.3411 0.2465 0.4548 0.3316 cnt:151182 47739 3967 imps:50.4 Fin:Sat Dec  2 00:34:30 2023 lr: 0.0083
+Iter: 1300/ 6610 loss:0.3376 0.2805 0.4600 0.3050 cnt:149662 45394 3930 imps:50.5 Fin:Sat Dec  2 00:34:26 2023 lr: 0.0082
+
+Iter: 1350/ 6610 loss:0.3315 0.2597 0.4695 0.2985 cnt:140553 54800 4221 imps:39.2 Fin:Sat Dec  2 00:34:32 2023 lr: 0.0081
+Iter: 1400/ 6610 loss:0.3363 0.2343 0.4693 0.3207 cnt:154600 45456 4138 imps:47.3 Fin:Sat Dec  2 00:34:29 2023 lr: 0.0081
+Iter: 1450/ 6610 loss:0.3189 0.2389 0.4474 0.2946 cnt:138826 46310 3759 imps:49.7 Fin:Sat Dec  2 00:34:27 2023 lr: 0.0080
+Iter: 1500/ 6610 loss:0.3412 0.2504 0.4511 0.3317 cnt:141532 46670 3560 imps:50.9 Fin:Sat Dec  2 00:34:24 2023 lr: 0.0079
+Iter: 1550/ 6610 loss:0.2906 0.2318 0.4221 0.2543 cnt:145798 48633 3701 imps:51.5 Fin:Sat Dec  2 00:34:23 2023 lr: 0.0079
+Iter: 1600/ 6610 loss:0.3295 0.2413 0.4272 0.3247 cnt:124450 52874 2892 imps:51.9 Fin:Sat Dec  2 00:34:21 2023 lr: 0.0078
+Iter: 1650/ 6610 loss:0.3110 0.2273 0.4497 0.2836 cnt:140585 41931 3455 imps:52.2 Fin:Sat Dec  2 00:34:19 2023 lr: 0.0077
+Iter: 1700/ 6610 loss:0.2938 0.2157 0.4510 0.2542 cnt:132830 43860 2989 imps:52.5 Fin:Sat Dec  2 00:34:17 2023 lr: 0.0077
+Iter: 1750/ 6610 loss:0.3549 0.2829 0.4687 0.3339 cnt:148687 39915 2729 imps:52.6 Fin:Sat Dec  2 00:34:15 2023 lr: 0.0076
+Iter: 1800/ 6610 loss:0.3334 0.2575 0.4186 0.3287 cnt:137854 49351 3095 imps:52.7 Fin:Sat Dec  2 00:34:14 2023 lr: 0.0075
+Iter: 1850/ 6610 loss:0.2953 0.2471 0.4414 0.2464 cnt:158958 43194 3662 imps:52.9 Fin:Sat Dec  2 00:34:12 2023 lr: 0.0074
+Iter: 1900/ 6610 loss:0.2965 0.2476 0.4290 0.2547 cnt:142230 45104 2930 imps:53.0 Fin:Sat Dec  2 00:34:11 2023 lr: 0.0074
+Iter: 1950/ 6610 loss:0.3050 0.2315 0.4348 0.2769 cnt:143641 51920 3997 imps:53.1 Fin:Sat Dec  2 00:34:09 2023 lr: 0.0073
+Iter: 2000/ 6610 loss:0.2917 0.2166 0.4196 0.2653 cnt:146387 45136 2440 imps:53.2 Fin:Sat Dec  2 00:34:08 2023 lr: 0.0072
+Iter: 2050/ 6610 loss:0.2836 0.2287 0.4211 0.2422 cnt:144241 49777 3498 imps:53.3 Fin:Sat Dec  2 00:34:06 2023 lr: 0.0072
+Iter: 2100/ 6610 loss:0.3008 0.2154 0.4138 0.2870 cnt:138649 44136 3497 imps:53.4 Fin:Sat Dec  2 00:34:05 2023 lr: 0.0071
+Iter: 2150/ 6610 loss:0.2884 0.2421 0.4296 0.2409 cnt:140096 40998 2955 imps:53.5 Fin:Sat Dec  2 00:34:03 2023 lr: 0.0070
+Iter: 2200/ 6610 loss:0.2810 0.2482 0.3911 0.2422 cnt:139646 49482 3795 imps:53.5 Fin:Sat Dec  2 00:34:02 2023 lr: 0.0069
+Iter: 2250/ 6610 loss:0.2824 0.2265 0.3927 0.2553 cnt:135100 43487 3287 imps:53.6 Fin:Sat Dec  2 00:34:01 2023 lr: 0.0069
+Iter: 2300/ 6610 loss:0.3489 0.2703 0.4388 0.3432 cnt:128779 56554 3744 imps:53.6 Fin:Sat Dec  2 00:34:00 2023 lr: 0.0068
+Iter: 2350/ 6610 loss:0.2822 0.2239 0.3750 0.2649 cnt:142578 47744 3822 imps:53.7 Fin:Sat Dec  2 00:33:59 2023 lr: 0.0067
+Iter: 2400/ 6610 loss:0.2848 0.2260 0.4111 0.2511 cnt:150184 45456 3572 imps:53.8 Fin:Sat Dec  2 00:33:58 2023 lr: 0.0067
+Iter: 2450/ 6610 loss:0.3031 0.2439 0.4096 0.2795 cnt:137017 50194 3181 imps:53.8 Fin:Sat Dec  2 00:33:56 2023 lr: 0.0066
+Iter: 2500/ 6610 loss:0.3204 0.2299 0.4023 0.3247 cnt:131007 47538 3126 imps:53.9 Fin:Sat Dec  2 00:33:55 2023 lr: 0.0065
+Iter: 2550/ 6610 loss:0.2798 0.2437 0.3826 0.2465 cnt:143443 41255 2511 imps:53.8 Fin:Sat Dec  2 00:33:55 2023 lr: 0.0064
+Iter: 2600/ 6610 loss:0.2571 0.2142 0.3541 0.2299 cnt:149895 42898 3560 imps:53.8 Fin:Sat Dec  2 00:33:55 2023 lr: 0.0064
+
+Iter: 2650/ 6610 loss:0.3000 0.2253 0.4189 0.2779 cnt:138616 56621 3843 imps:18.2 Fin:Sat Dec  2 00:33:59 2023 lr: 0.0063
+Iter: 2700/ 6610 loss:0.3124 0.2251 0.4373 0.2936 cnt:142501 50756 3535 imps:43.7 Fin:Sat Dec  2 00:33:58 2023 lr: 0.0062
+Iter: 2750/ 6610 loss:0.3005 0.2328 0.4191 0.2750 cnt:147337 43027 3255 imps:48.4 Fin:Sat Dec  2 00:33:57 2023 lr: 0.0062
+Iter: 2800/ 6610 loss:0.2504 0.1974 0.3733 0.2155 cnt:144970 49848 4023 imps:50.7 Fin:Sat Dec  2 00:33:56 2023 lr: 0.0061
+Iter: 2850/ 6610 loss:0.2703 0.2064 0.3857 0.2446 cnt:141467 48956 3070 imps:52.1 Fin:Sat Dec  2 00:33:54 2023 lr: 0.0060
+Iter: 2900/ 6610 loss:0.2599 0.2086 0.3965 0.2172 cnt:141413 45707 3358 imps:52.6 Fin:Sat Dec  2 00:33:53 2023 lr: 0.0059
+Iter: 2950/ 6610 loss:0.2881 0.2206 0.4113 0.2603 cnt:130551 45117 2898 imps:52.7 Fin:Sat Dec  2 00:33:53 2023 lr: 0.0059
+Iter: 3000/ 6610 loss:0.2859 0.2065 0.3933 0.2719 cnt:137235 47277 3170 imps:53.2 Fin:Sat Dec  2 00:33:52 2023 lr: 0.0058
+Iter: 3050/ 6610 loss:0.2547 0.1936 0.3896 0.2178 cnt:138192 43967 3271 imps:53.5 Fin:Sat Dec  2 00:33:51 2023 lr: 0.0057
+Iter: 3100/ 6610 loss:0.2815 0.1944 0.4005 0.2655 cnt:147711 42151 3241 imps:53.5 Fin:Sat Dec  2 00:33:50 2023 lr: 0.0057
+Iter: 3150/ 6610 loss:0.2753 0.2135 0.3996 0.2441 cnt:140945 49037 3254 imps:53.4 Fin:Sat Dec  2 00:33:50 2023 lr: 0.0056
+Iter: 3200/ 6610 loss:0.2684 0.2232 0.3765 0.2370 cnt:134629 49749 3256 imps:53.5 Fin:Sat Dec  2 00:33:50 2023 lr: 0.0055
+Iter: 3250/ 6610 loss:0.2849 0.2145 0.3887 0.2683 cnt:148333 48822 3575 imps:53.7 Fin:Sat Dec  2 00:33:49 2023 lr: 0.0054
+Iter: 3300/ 6610 loss:0.2710 0.2112 0.3819 0.2455 cnt:147902 42651 3193 imps:53.8 Fin:Sat Dec  2 00:33:48 2023 lr: 0.0054
+Iter: 3350/ 6610 loss:0.2759 0.2036 0.3979 0.2510 cnt:139911 46241 3159 imps:54.0 Fin:Sat Dec  2 00:33:47 2023 lr: 0.0053
+Iter: 3400/ 6610 loss:0.2713 0.2131 0.3805 0.2458 cnt:153388 49727 3827 imps:54.1 Fin:Sat Dec  2 00:33:46 2023 lr: 0.0052
+Iter: 3450/ 6610 loss:0.2612 0.2086 0.3793 0.2285 cnt:138247 47949 3479 imps:54.3 Fin:Sat Dec  2 00:33:45 2023 lr: 0.0051
+Iter: 3500/ 6610 loss:0.2838 0.2054 0.3934 0.2683 cnt:129550 50179 3398 imps:54.4 Fin:Sat Dec  2 00:33:44 2023 lr: 0.0051
+Iter: 3550/ 6610 loss:0.2563 0.2127 0.3723 0.2201 cnt:142858 46973 3359 imps:54.4 Fin:Sat Dec  2 00:33:43 2023 lr: 0.0050
+Iter: 3600/ 6610 loss:0.2617 0.1968 0.3748 0.2376 cnt:139877 49895 3339 imps:54.5 Fin:Sat Dec  2 00:33:43 2023 lr: 0.0049
+Iter: 3650/ 6610 loss:0.2660 0.1983 0.4087 0.2286 cnt:136179 45415 3359 imps:54.6 Fin:Sat Dec  2 00:33:42 2023 lr: 0.0049
+Iter: 3700/ 6610 loss:0.2885 0.1986 0.3942 0.2806 cnt:152081 46859 3305 imps:54.6 Fin:Sat Dec  2 00:33:41 2023 lr: 0.0048
+Iter: 3750/ 6610 loss:0.3387 0.2086 0.4577 0.3442 cnt:134897 42610 3256 imps:54.6 Fin:Sat Dec  2 00:33:41 2023 lr: 0.0047
+Iter: 3800/ 6610 loss:0.2975 0.2284 0.4324 0.2646 cnt:147148 47691 4074 imps:54.6 Fin:Sat Dec  2 00:33:40 2023 lr: 0.0046
+Iter: 3850/ 6610 loss:0.2626 0.2126 0.3751 0.2313 cnt:152750 46308 3588 imps:54.6 Fin:Sat Dec  2 00:33:40 2023 lr: 0.0046
+Iter: 3900/ 6610 loss:0.2678 0.1792 0.3816 0.2553 cnt:127865 46531 3165 imps:54.6 Fin:Sat Dec  2 00:33:39 2023 lr: 0.0045
+Iter: 3950/ 6610 loss:0.2875 0.2150 0.3868 0.2741 cnt:135977 49787 3874 imps:54.5 Fin:Sat Dec  2 00:33:39 2023 lr: 0.0044
+
+Iter: 4000/ 6610 loss:0.2571 0.2054 0.3812 0.2209 cnt:130587 46841 3082 imps:40.1 Fin:Sat Dec  2 00:33:43 2023 lr: 0.0043
+Iter: 4050/ 6610 loss:0.2490 0.1811 0.3831 0.2159 cnt:140912 45359 3530 imps:47.7 Fin:Sat Dec  2 00:33:42 2023 lr: 0.0043
+Iter: 4100/ 6610 loss:0.2608 0.1783 0.3883 0.2383 cnt:140437 47314 3244 imps:50.3 Fin:Sat Dec  2 00:33:41 2023 lr: 0.0042
+Iter: 4150/ 6610 loss:0.2479 0.2223 0.3908 0.1893 cnt:142380 47950 3273 imps:51.4 Fin:Sat Dec  2 00:33:41 2023 lr: 0.0041
+Iter: 4200/ 6610 loss:0.2552 0.2111 0.3321 0.2388 cnt:152951 48433 3546 imps:52.1 Fin:Sat Dec  2 00:33:41 2023 lr: 0.0040
+Iter: 4250/ 6610 loss:0.2240 0.1693 0.3464 0.1901 cnt:146232 52078 3829 imps:52.1 Fin:Sat Dec  2 00:33:41 2023 lr: 0.0040
+Iter: 4300/ 6610 loss:0.2869 0.2091 0.3931 0.2726 cnt:137046 50427 3703 imps:52.0 Fin:Sat Dec  2 00:33:41 2023 lr: 0.0039
+Iter: 4350/ 6610 loss:0.2465 0.1671 0.3756 0.2216 cnt:130110 47600 3437 imps:52.0 Fin:Sat Dec  2 00:33:41 2023 lr: 0.0038
+Iter: 4400/ 6610 loss:0.2706 0.2098 0.3853 0.2436 cnt:144935 43673 3481 imps:52.2 Fin:Sat Dec  2 00:33:41 2023 lr: 0.0037
+Iter: 4450/ 6610 loss:0.2720 0.1784 0.3811 0.2643 cnt:125550 48677 3947 imps:52.3 Fin:Sat Dec  2 00:33:41 2023 lr: 0.0037
+Iter: 4500/ 6610 loss:0.2590 0.2051 0.3714 0.2298 cnt:147516 42092 2824 imps:52.4 Fin:Sat Dec  2 00:33:41 2023 lr: 0.0036
+Iter: 4550/ 6610 loss:0.2934 0.2002 0.4058 0.2839 cnt:144358 48489 3582 imps:52.5 Fin:Sat Dec  2 00:33:41 2023 lr: 0.0035
+Iter: 4600/ 6610 loss:0.2471 0.1951 0.3725 0.2103 cnt:146909 42498 3012 imps:52.6 Fin:Sat Dec  2 00:33:40 2023 lr: 0.0034
+Iter: 4650/ 6610 loss:0.2477 0.2071 0.3453 0.2191 cnt:133381 46172 3136 imps:52.4 Fin:Sat Dec  2 00:33:41 2023 lr: 0.0033
+Iter: 4700/ 6610 loss:0.2465 0.1784 0.3579 0.2249 cnt:136055 48785 3291 imps:52.5 Fin:Sat Dec  2 00:33:41 2023 lr: 0.0033
+Iter: 4750/ 6610 loss:0.2737 0.2117 0.3877 0.2477 cnt:144130 47625 3899 imps:52.6 Fin:Sat Dec  2 00:33:41 2023 lr: 0.0032
+Iter: 4800/ 6610 loss:0.2663 0.1863 0.3701 0.2544 cnt:139301 43729 3003 imps:52.7 Fin:Sat Dec  2 00:33:40 2023 lr: 0.0031
+Iter: 4850/ 6610 loss:0.2744 0.2104 0.3907 0.2483 cnt:135840 46104 2792 imps:52.9 Fin:Sat Dec  2 00:33:40 2023 lr: 0.0030
+Iter: 4900/ 6610 loss:0.2739 0.2158 0.4151 0.2323 cnt:147361 41429 2899 imps:53.0 Fin:Sat Dec  2 00:33:39 2023 lr: 0.0030
+Iter: 4950/ 6610 loss:0.2722 0.2076 0.3897 0.2458 cnt:133273 54006 4082 imps:53.0 Fin:Sat Dec  2 00:33:39 2023 lr: 0.0029
+Iter: 5000/ 6610 loss:0.2734 0.1998 0.3940 0.2498 cnt:150642 46871 3541 imps:53.1 Fin:Sat Dec  2 00:33:39 2023 lr: 0.0028
+Iter: 5050/ 6610 loss:0.2418 0.1892 0.3812 0.1985 cnt:140563 44722 2719 imps:53.2 Fin:Sat Dec  2 00:33:39 2023 lr: 0.0027
+Iter: 5100/ 6610 loss:0.2734 0.1922 0.3827 0.2594 cnt:147095 49666 3982 imps:53.2 Fin:Sat Dec  2 00:33:38 2023 lr: 0.0026
+Iter: 5150/ 6610 loss:0.2498 0.1706 0.3681 0.2302 cnt:139429 48143 3328 imps:53.3 Fin:Sat Dec  2 00:33:38 2023 lr: 0.0026
+Iter: 5200/ 6610 loss:0.2838 0.1973 0.3637 0.2870 cnt:137286 45904 2711 imps:53.3 Fin:Sat Dec  2 00:33:38 2023 lr: 0.0025
+Iter: 5250/ 6610 loss:0.2319 0.1873 0.3724 0.1838 cnt:151786 48299 4216 imps:53.3 Fin:Sat Dec  2 00:33:38 2023 lr: 0.0024
+
+Iter: 5300/ 6610 loss:0.2598 0.1780 0.3720 0.2446 cnt:144625 44301 3504 imps:25.4 Fin:Sat Dec  2 00:33:41 2023 lr: 0.0023
+Iter: 5350/ 6610 loss:0.2261 0.1858 0.3546 0.1821 cnt:141017 40888 2922 imps:43.7 Fin:Sat Dec  2 00:33:41 2023 lr: 0.0022
+Iter: 5400/ 6610 loss:0.2496 0.1748 0.3546 0.2344 cnt:135691 42966 2996 imps:47.4 Fin:Sat Dec  2 00:33:41 2023 lr: 0.0022
+Iter: 5450/ 6610 loss:0.2726 0.2043 0.3931 0.2464 cnt:132667 52934 3867 imps:48.9 Fin:Sat Dec  2 00:33:41 2023 lr: 0.0021
+Iter: 5500/ 6610 loss:0.2681 0.1864 0.4129 0.2366 cnt:145585 57066 4194 imps:49.9 Fin:Sat Dec  2 00:33:41 2023 lr: 0.0020
+Iter: 5550/ 6610 loss:0.2642 0.1892 0.3870 0.2403 cnt:152366 45357 3357 imps:50.6 Fin:Sat Dec  2 00:33:41 2023 lr: 0.0019
+Iter: 5600/ 6610 loss:0.2206 0.2038 0.3166 0.1810 cnt:141532 43624 2753 imps:51.1 Fin:Sat Dec  2 00:33:41 2023 lr: 0.0018
+Iter: 5650/ 6610 loss:0.2576 0.1861 0.3417 0.2512 cnt:141749 48999 3019 imps:51.5 Fin:Sat Dec  2 00:33:40 2023 lr: 0.0018
+Iter: 5700/ 6610 loss:0.2452 0.1834 0.3857 0.2058 cnt:142200 47260 3259 imps:51.9 Fin:Sat Dec  2 00:33:40 2023 lr: 0.0017
+Iter: 5750/ 6610 loss:0.2538 0.1824 0.3863 0.2232 cnt:145830 52608 4051 imps:52.2 Fin:Sat Dec  2 00:33:40 2023 lr: 0.0016
+Iter: 5800/ 6610 loss:0.2478 0.1621 0.3874 0.2208 cnt:132884 46376 3199 imps:52.3 Fin:Sat Dec  2 00:33:40 2023 lr: 0.0015
+Iter: 5850/ 6610 loss:0.2381 0.1815 0.3496 0.2107 cnt:133807 54886 3623 imps:52.5 Fin:Sat Dec  2 00:33:39 2023 lr: 0.0014
+Iter: 5900/ 6610 loss:0.2361 0.1851 0.3742 0.1926 cnt:144244 44749 3393 imps:52.8 Fin:Sat Dec  2 00:33:39 2023 lr: 0.0013
+Iter: 5950/ 6610 loss:0.2403 0.1753 0.3246 0.2308 cnt:128683 48080 3188 imps:53.0 Fin:Sat Dec  2 00:33:38 2023 lr: 0.0013
+Iter: 6000/ 6610 loss:0.2490 0.1723 0.3974 0.2131 cnt:139530 43191 2803 imps:53.1 Fin:Sat Dec  2 00:33:38 2023 lr: 0.0012
+Iter: 6050/ 6610 loss:0.2500 0.1818 0.3699 0.2241 cnt:154524 43105 3595 imps:53.3 Fin:Sat Dec  2 00:33:38 2023 lr: 0.0011
+Iter: 6100/ 6610 loss:0.2468 0.1906 0.3497 0.2235 cnt:136819 52352 3887 imps:53.4 Fin:Sat Dec  2 00:33:37 2023 lr: 0.0010
+Iter: 6150/ 6610 loss:0.2904 0.2046 0.4282 0.2644 cnt:141099 45819 3600 imps:53.5 Fin:Sat Dec  2 00:33:37 2023 lr: 0.0009
+Iter: 6200/ 6610 loss:0.2359 0.1847 0.3559 0.2016 cnt:145876 43346 2858 imps:53.6 Fin:Sat Dec  2 00:33:37 2023 lr: 0.0008
+Iter: 6250/ 6610 loss:0.2548 0.1891 0.3995 0.2152 cnt:130199 43901 2557 imps:53.7 Fin:Sat Dec  2 00:33:36 2023 lr: 0.0007
+Iter: 6300/ 6610 loss:0.2555 0.1872 0.3598 0.2375 cnt:138490 49647 3532 imps:53.9 Fin:Sat Dec  2 00:33:36 2023 lr: 0.0006
+Iter: 6350/ 6610 loss:0.2539 0.2154 0.3534 0.2235 cnt:144338 48053 3738 imps:53.9 Fin:Sat Dec  2 00:33:35 2023 lr: 0.0005
+Iter: 6400/ 6610 loss:0.2504 0.1806 0.3707 0.2251 cnt:149528 41193 3417 imps:54.0 Fin:Sat Dec  2 00:33:35 2023 lr: 0.0004
+Iter: 6450/ 6610 loss:0.2401 0.1958 0.3458 0.2094 cnt:147742 44787 3861 imps:54.1 Fin:Sat Dec  2 00:33:35 2023 lr: 0.0004
+Iter: 6500/ 6610 loss:0.2543 0.1888 0.3546 0.2368 cnt:141857 43524 3102 imps:54.1 Fin:Sat Dec  2 00:33:35 2023 lr: 0.0003
+Iter: 6550/ 6610 loss:0.2527 0.2033 0.3420 0.2327 cnt:140826 48682 3479 imps:54.1 Fin:Sat Dec  2 00:33:34 2023 lr: 0.0001
+Iter: 6600/ 6610 loss:0.2514 0.1859 0.3572 0.2312 cnt:152078 44548 3870 imps:54.2 Fin:Sat Dec  2 00:33:34 2023 lr: 0.0000
+
